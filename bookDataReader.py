@@ -31,4 +31,4 @@ for classKey in data:
 
 print("The most expensive book required by the school is {} for ${} in {}".format(title, price, bookClass))
 print("The class with the most required books is {} with {} books".format(bookCountClass, maxBookCount))
-print("The class that cost the most to take was {} with ${} worth of books".format(highestCostClass, totalPrice))
+print("The class that cost the most to take was {} with ${} worth of books".format(highestCostClass, totalPriceesk))
