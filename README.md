@@ -18,7 +18,7 @@ Bookstore data and class visualiser
 - The class with the most required books was classics 095 with 11 required books. 
 - The most expensive class to take was human development 263, with 491 dollars of required books.
 - There are a lot of "offered" classes that are completely empty. The average class size for this semseter was .1 students per class. 
-- The total money the school asked students to spend all students to pay was $4,069,907.61 
+- The total money the school asked all students to pay was $4,069,907.61 
 - The school asked the average student to spend: $355.67
 
 ### Week 3 update:
