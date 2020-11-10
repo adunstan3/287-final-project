@@ -7,6 +7,9 @@ Bookstore data and class visualiser
 - bookDataReader.py is a short little program that pulls some fun facts from the bookstore data
 - classDataScraper.ipynb is the code that grabs and formats the registrar data
 - uvmClasses.xlsx is an excell document with the web data from the past 10 semesters in different pages
+- bookDataConverter.py converts the json book data to tabular format to be loaded into pandas
+- bookPrices.xlsx is the saved tabular format book data 
+- studentPriceEstimate.ipynb merges the book data and the class data to estimate how much each student spent on books
 
 ### Links
 - Bookstore site: https://uvmbookstore.uvm.edu/buy_textbooks.asp
