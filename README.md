@@ -11,6 +11,21 @@ Bookstore data and class visualiser
 ### Links
 - Bookstore site: https://uvmbookstore.uvm.edu/buy_textbooks.asp
 - Registrar site: https://giraffe.uvm.edu/~rgweb/batch/swrsectc_fall_soc_202009/all_sections.html
+- Undergraduate population source: https://tinyurl.com/y5b8npzu
+
+### Fun facts found so far
+- The most expensive required book this semester was a 402 dollar biochem textbook. 
+- The class with the most required books was classics 095 with 11 required books. 
+- The most expensive class to take was human development 263, with 491 dollars of required books.
+- There are a lot of "offered" classes that are completely empty. The average class size for this semseter was .1 students per class. 
+- The total money the school asked students to spend all students to pay was $4,069,907.61 
+- The school asked the average student to spend: $355.67
+
+### Week 3 update:
+
+This week I converted the JSON data from the bookstore into a tabular format and added it to the class data. I then used that data to get an estimate of the average amount each student spends on books. It was challenging to get the two data sets to merge, but it wasn’t too hard to get my estimate once they were merged. 
+I matched the book prices to the classes, and then I multiplied the price by the current enrolment to find the total spent on books by the class. I then added up all the totals for all classes to find the total spent on books by the school. I then divided that number by the total undergraduate population to get the average amount spend on books by each student. 
+
 
 ### Week 2 update:
 
