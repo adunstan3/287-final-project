@@ -1,0 +1,45 @@
+# %% codecell
+#import required packages and load the 2 data frames
+import pandas as pd
+bookPrices = pd.read_excel('bookPrices.xlsx', index_col=None)
+classData = pd.read_excel('uvmClasses.xlsx', index_col=None, sheet_name = "Fall 2020")
+classData = classData.drop([0])
+classData["Comments"]
+# %% codecell
+#A function that searches the book prices data frame and returns
+def getPrices(row):
+    course = str(row['Course']).strip()
+    section = str(row['Sect']).strip()
+
+    correctClassBool = bookPrices["title"] == course
+    chosenClasses = bookPrices[correctClassBool]
+
+    correctSectBool = chosenClasses.section.isin([section, 'ALL'])
+    chosenClasses = chosenClasses[correctSectBool]
+
+    if chosenClasses.empty:
+        return 0
+    else:
+        return chosenClasses['totalPrice'].iloc[0]
+
+classData['bookPrice'] = classData.apply(getPrices, axis = 1)
+# %% codecell
+classData.fillna(value={'Cur Enrl': 0})
+
+def findTotalSpent(row):
+    enrl = row['Cur Enrl']
+    price = row['bookPrice']
+    enrl = int(enrl.split()[0])
+    return enrl*price
+
+classData['totalSpent'] = classData.apply(findTotalSpent, axis = 1)
+
+totalSpentByStudents = classData['totalSpent'].sum()
+
+#Source: https://tinyurl.com/y5b8npzu
+numStudents = 11443
+averageSpent = totalSpentByStudents/numStudents
+
+print("Total money the school asked students to spend: ${:.2f}".format(totalSpentByStudents))
+print("The school asked the average student to spend: ${:.2f}".format(averageSpent))
+# %% codecell

@@ -133,7 +133,7 @@ def getSemestersData(link, comentsLoc):
     df = pd.DataFrame (data, columns = columnTitals)
     return df
 
-with pd.ExcelWriter('uvmClasses.xlsx') as writer:
+with pd.ExcelWriter('Data/uvmClasses.xlsx') as writer:
     df = getSemestersData('https://giraffe.uvm.edu/~rgweb/batch/swrsectc_fall_soc_202009/all_sections.html', 154)
     df.to_excel(writer, sheet_name= 'Fall 2020', index=False)
     df = getSemestersData('https://giraffe.uvm.edu/~rgweb/batch/swrsectc_spring_soc_202001/all_sections.html', 154)

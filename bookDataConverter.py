@@ -5,7 +5,7 @@ import pandas as pd
 #format the book data json into a data frame
 
 #read in the json
-with open('bookData.json') as f:
+with open('Data/bookData.json') as f:
     classDict = json.load(f)
 
 #prepare the structure used to write the data to the dataframe
@@ -54,4 +54,4 @@ for dictKey in classNames:
 
 #convert the data dict to a data frame and save it
 df = pd.DataFrame(data=data)
-df.to_excel("bookPrices.xlsx", index=False)
+df.to_excel("Data/bookPrices.xlsx", index=False)

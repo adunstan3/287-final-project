@@ -115,7 +115,7 @@ def grabData():
 
 grabData()
 
-with open('bookData.json', 'a') as outfile:
+with open('Data/bookData.json', 'a') as outfile:
     json.dump(data, outfile)
 
 driver.close()

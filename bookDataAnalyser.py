@@ -1,7 +1,7 @@
 import json
 
 data = 0
-with open('bookData.json') as f:
+with open('Data/bookData.json') as f:
     data = json.load(f)
 
 price = 0

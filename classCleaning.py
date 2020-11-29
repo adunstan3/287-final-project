@@ -3,22 +3,12 @@
 import pandas as pd
 
 #%% Load each semester of class data into a data frame
-classSheets = pd.ExcelFile("uvmClasses.xlsx")
+classSheets = pd.ExcelFile("Data/uvmClasses.xlsx")
 semesters = classSheets.sheet_names
 
 classDFs = {}
 for semester in semesters:
     classDFs[semester] = classSheets.parse(semester)
-
-#%% Drop unecessary columns
-columnsToDrop = ['Max Enrl', 'Remain Seats', 'Begin Time', 'End Time', 'Days', 'Bldg', 'Room',
-   'Instructor', 'PTRM', 'Inst Mthd', 'Attr', 'Fees', 'Section', 'Sect', 'Title']
-for df in classDFs.values():
-    for column in columnsToDrop:
-        try:
-            df.drop([column], axis=1, inplace=True)
-        except:
-            pass
 
 #classDFs['Fall 2019'].head(30)
 
@@ -27,8 +17,6 @@ for df in classDFs.values():
     df.drop(df[df['Credits'] == " 0.00"].index, inplace = True)
     df.drop(df[df['Credits'] == 0].index, inplace = True)
     df.reset_index(drop=True, inplace = True)
-    #we don't need credits after this
-    df.drop(['Credits'], axis=1, inplace=True)
 
 classDFs['Fall 2016'].shape
 
@@ -37,9 +25,6 @@ for df in classDFs.values():
     df.drop(df[df['Cur Enrl'] == " 0"].index, inplace = True)
     df.drop(df[df['Cur Enrl'] == 0].index, inplace = True)
     df.reset_index(drop=True, inplace = True)
-
-    #we don't need cur enrl after this
-    df.drop(['Cur Enrl'], axis=1, inplace=True)
 
 classDFs['Fall 2016'].shape
 
@@ -91,6 +76,18 @@ for df in classDFs.values():
 #classDFs['Fall 2016'].head(50)
 #classDFs['Fall 2016'].shape
 
+#%% Drop non traditional classes: internships, reaserch, etc
+for df in classDFs.values():
+    df.drop(df[df['Title'].str.contains('Independent|Assistantship|Research|Doctoral|Internship|Teaching Assistant|Rsrch|Thesis|Master\'s', regex=True)].index, inplace = True)
+
+#%% Drop columns that don't merge between semessters well
+columnsToDrop = ['PTRM', 'Inst Mthd', 'Attr', 'Section', 'Sect', 'Fees',]
+for df in classDFs.values():
+    for column in columnsToDrop:
+        try:
+            df.drop([column], axis=1, inplace=True)
+        except:
+            pass
 
 #%% Combine all dataframes into 1 only keeping the newest versions of classes
 # are listed in multiple semesters
@@ -105,8 +102,9 @@ for semester, df in classDFs.items():
     #print(masterClassList.shape)
 
 masterClassList.sort_values(by=['Course'], inplace = True)
+masterClassList.reset_index(drop=True, inplace = True)
 masterClassList.head(50)
 
-#%% Final cleaning and write out to csv and write comments to text
-masterClassList.to_csv("masterClassList.csv", index=False,)
-masterClassList['Comments'].to_csv("comments.txt", index=False, header=False)
+#%% Final cleaning and write out to csv and write all comments to text
+masterClassList.to_csv("Data/masterClassList.csv", index=False,)
+masterClassList['Title'].to_csv("Data/comments.txt", index=False, header=False)
