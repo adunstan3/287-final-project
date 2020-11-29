@@ -10,19 +10,40 @@ Bookstore data and class visualiser
 - **bookDataConverter.py** converts the json book data to tabular format to be loaded into pandas
 - **bookPrices.xlsx** is the saved tabular format book data 
 - **studentPriceEstimate.ipynb** merges the book data and the class data to estimate how much each student spent on books
+- **classCleaning.py** cleans the class data and merges the 10 semesters into one master class list
+- **masterClassDataAnalyser.py** grabs some statistics from the master class data
 
 ### Links
-- Bookstore site: https://uvmbookstore.uvm.edu/buy_textbooks.asp
-- Registrar site: https://giraffe.uvm.edu/~rgweb/batch/swrsectc_fall_soc_202009/all_sections.html
-- Undergraduate population source: https://tinyurl.com/y5b8npzu
+- Bookstore [site](https://uvmbookstore.uvm.edu/buy_textbooks.asp)
+- Registrar [site](https://giraffe.uvm.edu/~rgweb/batch/swrsectc_fall_soc_202009/all_sections.html)
+- Undergraduate population [source](https://tinyurl.com/y5b8npzu)
+- Class size and student:faculty ratio [source](https://tinyurl.com/yxmxat7k)
 
 ### Fun facts found so far
-- The most expensive required book this semester was a 402 dollar biochem textbook. 
-- The class with the most required books was classics 095 with 11 required books. 
-- The most expensive class to take was human development 263, with 491 dollars of required books.
-- There are a lot of "offered" classes that are completely empty. The average class size for this semseter was .1 students per class. 
-- The total money the school asked all students to pay was $4,069,907.61 
-- The school asked the average student to spend: $355.67
+- The most expensive required book this semester was a 402 dollar biochem textbook
+- The class with the most required books was classics 095 with 11 required books 
+- The most expensive class to take was human development 263, with 491 dollars of required books
+- The total money the school asked all students to pay for books was $4,069,907.61 
+- The school asked the average student to spend on books was $355.67
+
+- There are a lot of "offered" classes that are completely empty. The average class size for Fall 2020 semseter was .1 students per class
+- After cleaning and merging class data for the last 5 years I found:
+    - The average maximum capacity for a class is 33.08
+    - The average actual size of a class is 23.81
+    - The average class is 71.98% full
+    - 57.87% of the classes had under 20 students in them
+    - 35.18% of the classes had a max size of under 20 students
+- UVM's stated student:teacher ratio is 18:1, and their stated number of classes under 20 people is 40.7%
+
+- The registrar splits the courses up by categories with 157 categories in total over the past 5 years
+- The category with the most offered classes was European Studies with 108 classes
+- European Studies was followed by Music, Environmental Studies, Business Admin, and English
+- Mathematics and Computer Science had 57 classes, Stats had 32, and Complex Systems had 10
+
+### Week 5 update:
+
+### Week 4 update:
+Major computer problems, was not able to get any work done this week. 
 
 ### Week 3 update:
 
