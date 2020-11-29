@@ -20,12 +20,12 @@ Bookstore data and class visualiser
 - Class size and student:faculty ratio [source](https://tinyurl.com/yxmxat7k)
 
 ### Fun facts found so far
-- The most expensive required book this semester was a 402 dollar biochem textbook
-- The class with the most required books was classics 095 with 11 required books 
-- The most expensive class to take was human development 263, with 491 dollars of required books
-- The total money the school asked all students to pay for books was $4,069,907.61 
-- The school asked the average student to spend on books was $355.67
-
+- Book Prices:
+    - The most expensive required book this semester was a 402 dollar biochem textbook
+    - The class with the most required books was Classics 095 with 11 required books 
+    - The most expensive class to take was Human Development 263, with 491 dollars of required books
+    - The total money the school asked all students to pay for books was $4,069,907.61 
+    - The school asked the average student to spend on books was $355.67
 - There are a lot of "offered" classes that are completely empty. The average class size for Fall 2020 semseter was .1 students per class
 - After cleaning and merging class data for the last 5 years I found:
     - The average maximum capacity for a class is 33.08
@@ -33,14 +33,14 @@ Bookstore data and class visualiser
     - The average class is 71.98% full
     - 57.87% of the classes had under 20 students in them
     - 35.18% of the classes had a max size of under 20 students
-- UVM's stated student:teacher ratio is 18:1, and their stated number of classes under 20 people is 40.7%
-
+    - UVM's stated student:teacher ratio is 18:1, and their stated number of classes under 20 people is 40.7%
 - The registrar splits the courses up by categories with 157 categories in total over the past 5 years
-- The category with the most offered classes was European Studies with 108 classes
-- European Studies was followed by Music, Environmental Studies, Business Admin, and English
-- Mathematics and Computer Science had 57 classes, Stats had 32, and Complex Systems had 10
+    - The category with the most offered classes was European Studies with 108 classes
+    - European Studies was followed by Music, Environmental Studies, Business Admin, and English
+    - Mathematics and Computer Science had 57 classes, Stats had 32, and Complex Systems had 10
 
 ### Week 5 update:
+This week I cleaned and merged the ten semesters of class data into one master class list. This process was straightforward but a bit of work. I removed class rows with no enrolled students, which cut out a surprisingly high number of entries. Courses worth 0 credits are supplementary to other classes and were removed. I then removed entries that were alternate time offerings of the same course. My scraping wasn't perfect, so I had to clean several rows that contained formatting symbols instead of class data. I then removed nontraditional classes, with words like Independent, Assistantship, Research, or Doctoral in the title. I merged all ten semester's course offerings into one master class list, keeping the most recent classes when there were duplicates. The clean class data allowed me to collect better statistics about class size and class categories. The master class list is now ready for feature engineering to find pre and co-requisites. 
 
 ### Week 4 update:
 Major computer problems, was not able to get any work done this week. 
